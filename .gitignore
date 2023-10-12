@@ -1,0 +1,37 @@
+# Ignore node_modules directory for React
+/node_modules
+
+# Ignore Python virtual environment directory (if you use one)
+/venv
+
+# Ignore environment-specific files
+.env
+
+# Ignore Flask's pycache directory
+__pycache__
+
+# Ignore logs and databases
+*.log
+*.sqlite
+
+# Ignore build files and compiled code
+/build
+/dist
+
+# Ignore operating system files
+.DS_Store
+Thumbs.db
+
+# Ignore dependencies installed via pip (you can customize this)
+/requirements.txt
+
+# Ignore IDE or code editor specific files
+.idea
+.vscode
+
+# Ignore compiled Python files
+*.pyc
+
+# Ignore package-lock.json and yarn.lock for React
+package-lock.json
+yarn.lock
