@@ -1,28 +1,21 @@
-import React, { Component, useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+import './App.css';
 
-class App extends Component {
-    state = {
-        data: {}
-    };
+function App() {
+  const [data, setData] = useState({});
 
-    componentDidMount() {
-        axios.get('/api/data/')
-            .then(response => {
-                this.setState({ data: response.data });
-            })
-            .catch(error => {
-                console.error(error);
-            });
-    }
+  useEffect(() => {
+    fetch('/api/data')
+      .then((response) => response.json())
+      .then((data) => setData(data));
+  }, []);
 
-    render() {
-        return (
-            <div>
-                <h1>{this.state.data.message}</h1>
-            </div>
-        );
-    }
+  return (
+    <div className="App">
+      <h1>React Frontend</h1>
+      <p>{data.message}</p>
+    </div>
+  );
 }
 
 export default App;
