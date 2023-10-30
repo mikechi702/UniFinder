@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import axios from 'axios';
 
 function App() {
   const [data, setData] = useState({});
 
   useEffect(() => {
-    fetch('/api/data')
-      .then((response) => response.json())
-      .then((data) => setData(data));
+    // Use Axios to make the API request
+    axios.get('http://localhost:5000/api/data')
+      .then(response => {
+        setData(response.data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
   }, []);
 
   return (
@@ -19,8 +25,6 @@ function App() {
 }
 
 export default App;
-
-
 
 
 
