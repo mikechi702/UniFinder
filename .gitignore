@@ -23,7 +23,6 @@ __pycache__
 Thumbs.db
 
 # Ignore dependencies installed via pip (you can customize this)
-/requirements.txt
 
 # Ignore IDE or code editor specific files
 .idea
