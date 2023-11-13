@@ -1,5 +1,8 @@
+# python library imports
 from flask_cors import CORS
 from flask import Flask, jsonify
+
+# local imports
 from openAItest import setModelPrompt, setMessage, getResponse
 
 app = Flask(__name__) # initial app setup
