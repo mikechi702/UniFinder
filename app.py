@@ -14,10 +14,10 @@ def hello():
 
 @app.route('/api/data', methods=['GET']) # api setup to send data to the frontend
 def get_data():
-    setModelPrompt("You are a helpful assistant")
-    setMessage("Give me a sleazy lawyer slogan")
+    testPrompt = "You are a helpful assistant"
+    testInput = "Give me a sleazy lawyer slogan"
     aiMessage = "placeholder"
-    aiMessage = getResponse()
+    aiMessage = getResponse(testPrompt, testInput)
     data = {'message': aiMessage}
     return jsonify(data)
 

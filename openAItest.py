@@ -20,12 +20,12 @@ def setMessage(inputMessage):
     global message
     message = inputMessage
 
-def getResponse():
+def getResponse(inModel, inputMsg):
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
-            {"role": "system", "content": modelPrompt},
-            {"role": "user", "content": message},
+            {"role": "system", "content": inModel},
+            {"role": "user", "content": inputMsg},
         ],
         max_tokens = 100,
     )
@@ -47,12 +47,10 @@ def simConversation():
         userMessages = input("Enter your input: ")
 
 
-
-simConversation()
-
 if __name__ == '__main__': # bandaid fix to prevent these functions running automatixally
     getResponse()
     setModelPrompt()
     setMessage()
+    simConversation()
 
 
