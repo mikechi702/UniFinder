@@ -3,7 +3,7 @@ from flask_cors import CORS
 from flask import Flask, jsonify
 
 # local imports
-from openAItest import setModelPrompt, setMessage, getResponse
+from openAItest import UnifinderChatbot
 
 app = Flask(__name__) # initial app setup
 CORS(app)
@@ -16,8 +16,9 @@ def hello():
 def get_data():
     testPrompt = "You are a helpful assistant"
     testInput = "Give me a sleazy lawyer slogan"
-    aiMessage = "placeholder"
-    aiMessage = getResponse(testPrompt, testInput)
+    msgObject = UnifinderChatbot(testPrompt, testInput)
+    
+    aiMessage = msgObject.makeResponse()
     data = {'message': aiMessage}
     return jsonify(data)
 
