@@ -1,9 +1,10 @@
 .frame {
-    background-color: transparent;
+    background-color: #ffffff;
     display: flex;
     flex-direction: row;
     justify-content: center;
     width: 100%;
+    position: relative;
   }
   
   .frame .overlap-group-wrapper {
@@ -18,8 +19,8 @@
   
   .frame .rectangle {
     position: absolute;
-    width: 652px;
-    height: 365px;
+    width: auto;
+    height: auto;
     top: 0;
     left: 0;
   }
