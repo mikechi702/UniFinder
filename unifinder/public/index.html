@@ -48,6 +48,7 @@
   <head>
     <link rel="stylesheet" href="globals.css" />
     <link rel="stylesheet" href="style.css" />
+    <script src="navigate.js"></script>
   </head>
   <body>
     <div class="frame">
@@ -61,7 +62,13 @@
           <img class="img" src="img/chatgptIconTransparent 1.png" />
           <div class="powered-by-chatgpt">Powered by<br />ChatGPT</div>
           <img class="img-2" src="img/githubLogoTransparent 1.png" />
-          <img class="rectangle-2" src="img/Rectangle 14.png" />
+
+          <a href="#" onclick="navigateTo('frontPage')">
+            <img class="rectangle-2" src="img/Rectangle 14.png" alt="Clickable Image Button">
+          </a> 
+          <button onclick="navigateTo('frontPage')">Go to Front Page</button>
+
+
           <div class="deployed-on-github">Deployed on <br />GitHub Pages</div>
           <div class="text-wrapper">START EXPLORING</div>
           <img class="img-3" src="img/UnifinderLandingLogoTransparent.png" />
