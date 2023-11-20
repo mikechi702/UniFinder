@@ -40,6 +40,7 @@ function App() { // function that takes a user input, then sends that to the bac
       <p>{data.message}</p>
       
       <form onSubmit={handleSubmit}>
+        <div className="form-group">
         <label>
           Enter your input:
           <input
@@ -48,7 +49,10 @@ function App() { // function that takes a user input, then sends that to the bac
             onChange={(e) => setUserInput(e.target.value)}
           />
         </label>
+        </div>
+        <div className="form-group">
         <button type="submit">Submit</button>
+        </div>
       </form>
     </div>
   );
