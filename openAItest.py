@@ -31,7 +31,7 @@ class UnifinderChatbot:
         response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=self.messageHistory,
-            max_tokens = 150,
+            max_tokens = 300,
         )
         
         self.messageHistory.append(response['choices'][0]['message'])
