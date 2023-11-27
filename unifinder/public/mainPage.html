@@ -20,6 +20,23 @@
 </div>
 
 <script>
+    // Fetch the initial response when the page loads
+    window.onload = function() {
+        fetchInitialResponse();
+    };
+
+    function fetchInitialResponse() {
+        fetch('http://localhost:5000/api/data')
+            .then(response => response.json())
+            .then(data => {
+                var assistantResponse = data.message;
+                addMessage("assistant", assistantResponse);
+            })
+            .catch(error => {
+                console.error('Error fetching initial response from the backend:', error);
+            });
+    }
+
     function sendMessage() {
         var userInput = document.getElementById("userInput").value;
         if (userInput.trim() !== "") {

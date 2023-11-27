@@ -12,7 +12,7 @@ function App() { // function that takes a user input, then sends that to the bac
 
   const fetchData = async () => {
     try { // initial flask api call
-      const response = await axios.get('http://localhost:5000/api/data');
+      const response = await axios.get('http://localhost:5000/hello');
       setData(response.data);
     } catch (error) {
       console.error(error);

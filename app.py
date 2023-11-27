@@ -23,7 +23,7 @@ msgObject.setModelPrompt("""I want you to act as a guidance counselor
 
 msgObject.setMessage("Let us begin with your first question")
 
-@app.route('/') # base route
+@app.route('/hello') # base route
 def hello():
     return "hello in flask"
 
