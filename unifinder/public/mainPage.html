@@ -24,10 +24,25 @@
         var userInput = document.getElementById("userInput").value;
         if (userInput.trim() !== "") {
             addMessage("user", userInput);
-            // Simulate a response from the assistant (replace this with actual API call)
-            setTimeout(function() {
-                addMessage("assistant", "This is a sample response from the assistant.");
-            }, 500);
+
+            // Send the user input to the backend
+            fetch('http://localhost:5000/api/data', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ name: userInput }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Assuming your backend responds with a message key
+                var assistantResponse = data.message;
+                addMessage("assistant", assistantResponse);
+            })
+            .catch(error => {
+                console.error('Error sending message to the backend:', error);
+            });
+
             document.getElementById("userInput").value = "";
         }
     }
@@ -46,6 +61,7 @@
         chatMessages.scrollTop = chatMessages.scrollHeight;
     }
 </script>
+
 
 </body>
 </html>

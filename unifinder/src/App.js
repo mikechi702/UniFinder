@@ -36,7 +36,7 @@ function App() { // function that takes a user input, then sends that to the bac
 
   return (
     <div className="App">
-      <h1>Unifinder</h1>
+      {/* <h1>Unifinder</h1>
       <p>{data.message}</p>
       
       <form onSubmit={handleSubmit}>
@@ -53,7 +53,7 @@ function App() { // function that takes a user input, then sends that to the bac
         <div className="form-group">
         <button type="submit">Submit</button>
         </div>
-      </form>
+      </form> */}
     </div>
   );
 }

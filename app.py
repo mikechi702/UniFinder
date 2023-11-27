@@ -40,5 +40,7 @@ def get_data():
 
     data = {'message': aiMessage}
     return jsonify(data)
+
+
 if __name__ == '__main__':
     app.run(debug=True)
