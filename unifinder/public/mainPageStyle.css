@@ -52,8 +52,9 @@ body {
 }
 
 .assistant-message {
-    background-color:#ccf7c8;
+    background-color: #ccf7c8;
     align-self: flex-start;
+    position: relative; /* Position relative for absolute positioning of loading */
 }
 
 .message-text {
@@ -84,4 +85,10 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.loading {
+    display: none;
+    text-align: center;
+    margin-bottom: 10px; /* Add margin to separate the loading from the chat messages */
 }

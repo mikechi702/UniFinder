@@ -8,11 +8,12 @@
     <title>Unifinder</title>
 </head>
 <body>
-  
+
 <div class="chat-container">
     <div class="chat-header">Unifinder</div>
     <div class="chat-messages" id="chatMessages">
     </div>
+    <div id="loading" class="loading">Loading...</div>
     <div class="chat-input">
         <input type="text" class="input-box" id="userInput" placeholder="Type your message...">
         <button class="send-button" onclick="sendMessage()">Send</button>
@@ -26,6 +27,9 @@
     };
 
     function fetchInitialResponse() {
+        // Show loading animation
+        showLoading();
+
         fetch('http://localhost:5000/api/data')
             .then(response => response.json())
             .then(data => {
@@ -34,6 +38,10 @@
             })
             .catch(error => {
                 console.error('Error fetching initial response from the backend:', error);
+            })
+            .finally(() => {
+                // Hide loading animation when the response is received
+                hideLoading();
             });
     }
 
@@ -41,6 +49,9 @@
         var userInput = document.getElementById("userInput").value;
         if (userInput.trim() !== "") {
             addMessage("user", userInput);
+
+            // Show loading animation
+            showLoading();
 
             // Send the user input to the backend
             fetch('http://localhost:5000/api/data', {
@@ -52,16 +63,27 @@
             })
             .then(response => response.json())
             .then(data => {
-                // Assuming your backend responds with a message key
                 var assistantResponse = data.message;
                 addMessage("assistant", assistantResponse);
             })
             .catch(error => {
                 console.error('Error sending message to the backend:', error);
+            })
+            .finally(() => {
+                // Hide loading animation when the response is received
+                hideLoading();
             });
 
             document.getElementById("userInput").value = "";
         }
+    }
+
+    function showLoading() {
+        document.getElementById("loading").style.display = "block";
+    }
+
+    function hideLoading() {
+        document.getElementById("loading").style.display = "none";
     }
 
     function addMessage(sender, message) {
@@ -79,6 +101,7 @@
     }
 </script>
 
+<div id="chatMessages" class="chat-container"></div>
 
 </body>
 </html>
