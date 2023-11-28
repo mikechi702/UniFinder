@@ -8,17 +8,29 @@
     <title>Unifinder</title>
 </head>
 <body>
+    <div class="chat-container">
+        <div class="chat-sidebar">
+            <!-- Add left sidebar chat-related content here -->
+        </div>
+        <div class="chat-main">
+            <div class="chat-header">
+            <img class="img-3" src="img\UnifinderNewLogoTransparent 6.png" alt="Cropped Image" />
+            </div>
+            <div class="chat-messages" id="chatMessages">
+            <!-- Content for chat messages -->
+            </div>
+            <div id="loading" class="loading">Loading...</div>
+            <div class="chat-input">
+                <input type="text" class="input-box" id="userInput" placeholder="Type your message...">
+                <button class="send-button" onclick="sendMessage()">Send</button>
+            </div>
+            <div class="chat-header"></div>
+        </div>
+        <div class="chat-sidebar" >
+            <!-- Add right sidebar chat-related content here -->
+          </div>
+    </div>
 
-<div class="chat-container">
-    <div class="chat-header">Unifinder</div>
-    <div class="chat-messages" id="chatMessages">
-    </div>
-    <div id="loading" class="loading">Loading...</div>
-    <div class="chat-input">
-        <input type="text" class="input-box" id="userInput" placeholder="Type your message...">
-        <button class="send-button" onclick="sendMessage()">Send</button>
-    </div>
-</div>
 
 <script>
     // Fetch the initial response when the page loads

@@ -8,13 +8,13 @@ body {
 }
 
 .chat-container {
-  
-    margin: 20px auto; /* Center the container horizontally */
+    display: flex; /* Add display: flex */
+    justify-content: space-between;
+    margin: 20px auto; 
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    justify-content: space-between;
 }
 
 .chat-header {
@@ -24,12 +24,11 @@ body {
     text-align: center;
     font-size: 40px;
     font-weight: bold;
-    height: 50px;
+    height: 75px;
+    width: 100%
 }
 
 .chat-messages {
-    display: flex;
-    flex-direction: column;
     padding: 10px;
     overflow-y: scroll;
     max-height: calc(100% - 70px); /* Adjusted max-height to fit the remaining space */
@@ -62,11 +61,11 @@ body {
 }
 
 .chat-input {
-    display: flex;
     justify-content: space-between;
     /* align-items: center; */
     border-top: 1px solid #ccc;
     padding: 10px;
+    
 }
 
 .input-box {
@@ -75,6 +74,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     align-self: flex-end;
+    width: 500px;
 }
 
 .send-button {
@@ -92,3 +92,32 @@ body {
     text-align: center;
     margin-bottom: 10px; /* Add margin to separate the loading from the chat messages */
 }
+
+.img-3{
+    align-content: center;
+    justify-content: space-between;
+    height: 110px;
+}
+
+.chat-header,
+.chat-messages{
+  width: 98.5%; /* Make these sections take up the available vertical space */
+}
+
+.chat-sidebar {
+    width: 100px;
+    background-color:#1f3d54;
+    min-height: 100px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+  .chat-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
