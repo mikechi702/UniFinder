@@ -32,6 +32,7 @@ body {
     padding: 10px;
     overflow-y: scroll;
     max-height: calc(100% - 70px); /* Adjusted max-height to fit the remaining space */
+    padding-bottom: 100px;
 }
 
 .user-message,
@@ -121,3 +122,12 @@ body {
     align-items: center;
   }
 
+  .chat-sidebar-green {
+    width: 20px;
+    background-color:#64ed85;
+    min-height: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
